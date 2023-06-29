@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const connect = require('./db');
+const mongoose = require("mongoose");
 
 const app = express();
 const port = 8081;
@@ -16,13 +17,15 @@ app.use(
 app.use(morgan('tiny'));
 app.disable('x-powered-by');
 
-app.get('/', (req, res) => {
+/*app.get('/', (req, res) => {
   res.status(201).json('Home GET Request');
-});
+});*/
 
-app.use('/api/arenas', require('./routes/arenasRoute'));
+app.use('/arenas', require('./routes/arenasRoute'));
 
-connect()
+mongoose.connect(
+  "mongodb+srv://user:123@cluster0.styvg5e.mongodb.net/ArenaDB?retryWrites=true&w=majority/Arena"
+)
   .then(() => {
     app.listen(port, () => {
       console.log(`Server connected to http://localhost:${port}`);

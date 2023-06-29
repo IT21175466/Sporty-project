@@ -3,7 +3,7 @@ const router = express.Router();
 
 const arena = require('../models/arena')
 
-router.get("/getAllArenas", async(req,res) => {
+router.get("/", async(req,res) => {
     try {
         const arenas = await arena.find({})
         return res.json({ arenas });

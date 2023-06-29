@@ -1,4 +1,4 @@
-import {BrowserRouter as Router,Route,Switch, BrowserRouter } from "react-router-dom";
+import {BrowserRouter as Router,Route,Switch, BrowserRouter, Routes } from "react-router-dom";
 import HomeScreen from "./Pages/HomeScreen";
 import BookSports from "./Pages/BookSports";
 import ExpolerPart from "./Pages/ExpolerPart";
@@ -16,8 +16,12 @@ import Toprated from "./Pages/Toprated";
 function App() {
   return (
     <div>
-    <BrowserRouter>
-    <Header/>
+  <BrowserRouter>
+  <Routes>
+    <Route path="/" element={ <HomeScreen /> }/>
+    
+    </Routes>
+     {/*  <Header/>
     <Heroslider/>
 
       <Pinnedarena/>
@@ -26,10 +30,10 @@ function App() {
     <NewlyAddedArena/>
     <Footer/>
   
-{/* 
-  <Footer/> */}
 
+  <Footer/> }
 
+*/}
     </BrowserRouter>
     </div>
   );

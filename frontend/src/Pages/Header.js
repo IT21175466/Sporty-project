@@ -6,6 +6,7 @@ import PlaceIcon from '@mui/icons-material/Place';
 import DrawerComp from './DrawerComp';
 import './Header.css'
 
+
 const PAGES1 = ["EXPOLER"];
 const PAGES2 = ["ABOUT US"];
 const PAGES3 = ["HELP"];
@@ -97,9 +98,10 @@ const Header = () => {
                 }
                 {
                   PAGES3.map((HELP, index3)=> (
-                    <Tab key= {index3}  label={HELP} sx={{marginLeft: '-60px'}} />
+                    <Tab key= {index3}  label={HELP} to="/arenas" sx={{marginLeft: '-60px'}} />
                   )) 
                 }
+                
               </Tabs>
 
               {/* Buttons for login and sign up */}
